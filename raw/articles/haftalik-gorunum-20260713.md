@@ -12,6 +12,34 @@ tags: [tskb, haftalik-gorunum, ekonomi, turkiye-ekonomisi, kuresel-ekonomi]
 
 **Tarih:** 13 Temmuz 2026 | **Hafta:** 29/2026 | **Kaynak:** TSKB Ekonomik Araştırmalar
 
+## 📋 Özet
+
+📊 **TSKB Haftalık Görünüm — 13 Temmuz 2026**
+
+**🔹 Öne Çıkan Başlıklar:**
+  • ABD enflasyonu, şirket bilançoları ve | PİYASA FİYATLAMALARININ İMA ETTİĞİ ABD 2 YILLIK ENFLASYON BEKLENTİLERİ
+  • Hürmüz Boğazı fiyatlamaların odağında | (%)
+  • 3,5 | • | Hürmüz Boğazı’nın yeniden açılmasıyla petrol piyasasında arz fazlası
+  • beklentisi güçlenmişti. Ancak son gelişmeler enerji arzına ilişkin
+
+**🌍 Küresel Görünüm:**
+  • Hafta sonu ABD’nin İran’a yeni saldırılar düzenlemesi ve Savaşın
+  • Petrol fiyatları yüksek kalmasına rağmen iki yıllık enflasyon
+  • ABD’de 14 Temmuz’da tüketici, 15 Temmuz’da ise üretici 2,5 beklentileri hala savaş öncesi seviyelerin altında bulunuyor. Bu
+  • 8 Temmuz’da yayımlanan Fed tutanakları ise Orta Doğu’daki
+  • Fed Başkanı Kevin Warsh’ın 14–15 Temmuz’daki Kongre
+
+**📅 Haftanın Önemli Verileri:**
+  • 13 Temmuz - Pazartesi → Türkiye Cari İşlemler Dengesi
+  • 14 Temmuz - Salı → ABD TÜFE (Haziran, aylık
+  • 15 Temmuz - Çarşamba → Çin GSYH (2. Çeyrek,
+  • 16 Temmuz - Perşembe → ABD Perakende Satışlar (Haziran,
+  • 17 Temmuz - Cuma → ABD Konut Başlangıçları (Haziran,
+
+---
+
+## Detaylı İçerik
+
 ## Küresel Görünüm
 
 - Hafta sonu ABD’nin İran’a yeni saldırılar düzenlemesi ve Savaşın

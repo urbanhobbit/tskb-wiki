@@ -341,6 +341,9 @@ def create_wiki_article(date_str, pdf_path):
     body = '\n'.join(sections_output)
     
     # Frontmatter
+    summary_text = generate_summary(raw_text, date_str)
+    summary_for_yaml = summary_text[:500].replace('"', "'").replace('\n', '\\n')
+    
     frontmatter = f"""---
 title: "TSKB Haftalık Görünüm — {formatted_date}"
 date: {dt.strftime('%Y-%m-%d')}
@@ -354,6 +357,14 @@ tags: [tskb, haftalik-gorunum, ekonomi, turkiye-ekonomisi, kuresel-ekonomi]
 # TSKB Haftalık Görünüm — {formatted_date}
 
 **Tarih:** {formatted_date} | **Hafta:** {week_num}/{year} | **Kaynak:** TSKB Ekonomik Araştırmalar
+
+## 📋 Özet
+
+{summary_text}
+
+---
+
+## Detaylı İçerik
 
 {body}
 
@@ -460,6 +471,170 @@ def update_log(date_str, pdf_path):
     print(f"✓ log.md güncellendi")
 
 
+def generate_summary(raw_text, date_str):
+    """PDF metninden yapılandırılmış özet çıkar"""
+    dt = datetime.strptime(date_str, "%Y%m%d")
+    formatted_date = tr_date(dt)
+    
+    pages = raw_text.split('\f')
+    
+    # Sayfa başlıklarını topla (öne çıkan başlıklar)
+    page_headers = []
+    for page_text in pages:
+        if not page_text.strip():
+            continue
+        lines = page_text.strip().split('\n')
+        # Temiz başlık satırlarını bul (büyük harf içeren, kısa, grafik etiketi olmayan)
+        for line in lines[:6]:
+            s = line.strip()
+            if not s or len(s) < 15 or '•' in s[:5]:
+                continue
+            # Grafik/formül satırlarını filtrele
+            if re.match(r'^[\d,.\s%()x]{10,}$', s):
+                continue
+            if any(kw in s for kw in ['Haftalık', 'Yılbaşından', 'Şub ', 'Oca ', 'Nis ', 'Mar ', 'May ', 'Haz ', 'Tem ']):
+                continue
+            # Anlamlı başlık satırı
+            if re.search(r'[A-ZÖÜÇĞİŞ]', s) and len(s.split()) >= 2:
+                clean = re.sub(r'\s{5,}', ' | ', s).strip()
+                page_headers.append(clean)
+    
+    # Ana temaları topla (sayfa bazında tematik gruplama)
+    themes = {"Küresel": [], "Türkiye": [], "Politika": []}
+    current_theme = "Küresel"
+    
+    for page_idx, page_text in enumerate(pages):
+        if not page_text.strip():
+            continue
+        lines = page_text.strip().split('\n')
+        first_lines = [l.strip() for l in lines[:6] if l.strip()]
+        full_title = ' '.join(first_lines[:4])
+        
+        # Bölüm sınıflandırması
+        if any(kw in full_title for kw in ['Ödemeler dengesi', 'bütçe', 'Fitch', 'Türkiye', 'TCMB', 'DOLAR/TL', 'BORSA İSTANBUL']):
+            current_theme = "Türkiye"
+        elif any(kw in full_title for kw in ['ABD enflasyonu', 'ABD GETİRİ', 'EMTİA', 'bilanço', 'Hürmüz']):
+            current_theme = "Küresel"
+        
+        # Madde işaretlerini temizle ve birleştir
+        for line in lines:
+            s = line.strip()
+            if s.startswith('•'):
+                clean = re.sub(r'\s{10,}', ' ', s)
+                clean = clean.strip().lstrip('•').strip()
+                if len(clean) > 20 and current_theme in themes:
+                    themes[current_theme].append(clean)
+    
+    # Özet metnini oluştur
+    summary_parts = []
+    summary_parts.append(f"📊 **TSKB Haftalık Görünüm — {formatted_date}**\n")
+    
+    # 1. Öne Çıkan Başlıklar
+    if page_headers:
+        summary_parts.append("**🔹 Öne Çıkan Başlıklar:**")
+        seen = set()
+        for h in page_headers:
+            # Yinelenenleri önle
+            key = h.split('|')[0][:40]
+            if key not in seen and len(seen) < 6:
+                seen.add(key)
+                summary_parts.append(f"  • {h}")
+        summary_parts.append("")
+    
+    # 2. Küresel Görünüm
+    if themes["Küresel"]:
+        summary_parts.append("**🌍 Küresel Görünüm:**")
+        seen = set()
+        for item in themes["Küresel"][:5]:
+            clean = re.sub(r'\s+', ' ', item).strip()
+            if clean and len(clean) > 25 and clean[:50] not in seen:
+                seen.add(clean[:50])
+                # PDF'de bölünen cümleleri birleştirmeye çalış
+                if clean.endswith(',') or clean.endswith('ve') or clean.endswith('ile'):
+                    clean += "…"
+                summary_parts.append(f"  • {clean}")
+        summary_parts.append("")
+    
+    # 3. Türkiye Görünümü
+    if themes["Türkiye"]:
+        summary_parts.append("**🇹🇷 Türkiye Görünümü:**")
+        seen = set()
+        for item in themes["Türkiye"][:5]:
+            clean = re.sub(r'\s+', ' ', item).strip()
+            if clean and len(clean) > 25 and clean[:50] not in seen:
+                seen.add(clean[:50])
+                summary_parts.append(f"  • {clean}")
+        summary_parts.append("")
+    
+    # 4. Veri Takvimi (önemli kalemler)
+    data_calendar = []
+    for line in raw_text.split('\n'):
+        s = line.strip()
+        if re.match(r'^\d{1,2}\s', s) and any(month in s for month in 
+            ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 
+             'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']):
+            parts = s.split()
+            if len(parts) >= 4:
+                data_calendar.append(s)
+    
+    # Piyasa verileri
+    market_data = []
+    for page_text in pages[3:12]:  # Sayfa 4-11 arası (veri sayfaları)
+        lines = page_text.strip().split('\n')
+        for line in lines:
+            s = line.strip()
+            # Endeks/seviye verisi olan satırları yakala
+            if s and len(s) > 20 and re.search(r'[A-ZÖÜÇĞİŞ]{4,}', s) and re.search(r'[\d.,%]+', s):
+                if 'Seviye' in s or 'Değişim' in s or 'Getiri' in s:
+                    continue
+                if any(kw in s for kw in ['Kaynak:', 'Bloomberg']):
+                    continue
+                clean = re.sub(r'\s{5,}', '  ', s).strip()
+                if len(clean) > 30 and '•' not in clean:
+                    market_data.append(clean)
+    
+    if data_calendar:
+        summary_parts.append("**📅 Haftanın Önemli Verileri:**")
+        for item in data_calendar[:6]:
+            # Veri satırını temizle - ilk 4-5 kelimeyi al
+            parts = item.split()
+            # Sadece tarih + ülke + gösterge kısmını göster (ilk ~5 alan)
+            if len(parts) >= 3:
+                day = parts[0]
+                month = parts[1] if parts[1][0].isupper() else ""
+                country = ""
+                rest_start = 2
+                if month:
+                    country = parts[2] if len(parts) > 2 and parts[2][0].isupper() else ""
+                    rest_start = 3 if country else 2
+                else:
+                    country = parts[1] if parts[1][0].isupper() else ""
+                    rest_start = 2 if country else 1
+                # Göstergeyi ilk birkaç anlamlı kelime
+                indicator_parts = []
+                for p in parts[rest_start:]:
+                    if p.replace(',', '').replace('.', '').replace('-', '').replace('%', '').isdigit():
+                        break
+                    indicator_parts.append(p)
+                    if len(indicator_parts) >= 4:
+                        break
+                indicator = ' '.join(indicator_parts) if indicator_parts else '...'
+                label = f"{day} {month}".strip()
+                if country:
+                    label += f" - {country}"
+                summary_parts.append(f"  • {label} → {indicator}")
+        summary_parts.append("")
+    
+    # 5. Piyasa Verileri (kısa)
+    if market_data:
+        summary_parts.append("**📈 Piyasa Verileri:**")
+        for item in market_data[:4]:
+            summary_parts.append(f"  • {item}")
+        summary_parts.append("")
+    
+    return '\n'.join(summary_parts).strip()
+
+
 def create_concept_entities(raw_text, date_str):
     """Yeni kavram/entity sayfaları oluştur (ihtiyaç halinde)"""
     # Tespit edilen kavramlar
@@ -513,14 +688,29 @@ def main():
     
     # 2. Makale zaten var mı?
     article_path = ARTICLES_DIR / f"haftalik-gorunum-{date_str}.md"
+    summary_path = ARTICLES_DIR / f"haftalik-gorunum-{date_str}-ozet.txt"
+    is_new = not article_path.exists() or args.force
+    
     if article_path.exists() and not args.force:
         print(f"✓ Makale zaten var: {article_path.name}")
+        # Var olan makalenin özetini oku
+        if summary_path.exists():
+            summary_text = summary_path.read_text(encoding='utf-8')
+        else:
+            raw_text = extract_text_from_pdf(pdf_path)
+            summary_text = generate_summary(raw_text, date_str)
     else:
         # 3. Wiki makalesi oluştur
+        raw_text = extract_text_from_pdf(pdf_path)
         article_text = create_wiki_article(date_str, pdf_path)
         ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
         article_path.write_text(article_text, encoding='utf-8')
         print(f"✓ Makale oluşturuldu: {article_path.name}")
+        
+        # Özeti ayrı dosyaya kaydet (cron'un kolayca okuması için)
+        summary_text = generate_summary(raw_text, date_str)
+        summary_path.write_text(summary_text, encoding='utf-8')
+        print(f"✓ Özet kaydedildi: {summary_path.name}")
     
     # 4. Index ve log güncelle
     dt = datetime.strptime(date_str, "%Y%m%d")
@@ -529,7 +719,6 @@ def main():
     update_log(date_str, pdf_path)
     
     # 5. Kavram/entity tespiti
-    raw_text = extract_text_from_pdf(pdf_path)
     concepts, entities = create_concept_entities(raw_text, date_str)
     
     if concepts:
@@ -538,6 +727,11 @@ def main():
         print(f"  → Tespit edilen entity'ler: {', '.join(entities)}")
     
     print(f"\n✓ İşlem tamam. PDF: {pdf_path.name}, Makale: {article_path.name}\n")
+    
+    # Cron için özet çıktısı (makine tarafından okunabilir)
+    print("=== SUMMARY START ===")
+    print(summary_text)
+    print("=== SUMMARY END ===")
 
 
 if __name__ == "__main__":
