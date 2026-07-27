@@ -4,7 +4,7 @@
 
 | Tarih | Başlık | PDF |
 |-------|--------|-----|
-| 20.07.2026 | TSKB Haftalık Görünüm — 20 Temmuz 2026 | [PDF](raw/pdfs/haftalik-gorunum-20260720.pdf) |
+| 27.07.2026 | TSKB Haftalık Görünüm — 27 Temmuz 2026 | [PDF](raw/pdfs/haftalik-gorunum-20260727.pdf) |
 
 ## Kavramlar
 
