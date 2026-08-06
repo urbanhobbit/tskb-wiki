@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Türkiye’nin ilk özel sermayeli kalkınma ve yatırım bankası Türkiye Sınai Kalkınma Bankası, 1950’den bu yana, kurumsal bankacılık, yatırım bankacılığı ve danışmanlık hizmetlerimiz ile Türkiye’nin sürdürülebilir büyümesine destek veriyor.">
+<title>404 | TSKB</title>
+
+<link rel="alternate icon" href="/favicon.ico" type="image/x-icon"/ >
+
+
+	<link rel="stylesheet" href="/assets/css/main.css?1785832471777">
+
+	
+	<link rel="stylesheet" href="/assets/css/static.css?1785832471777">
+
+</head>
+
+<body>
+	<main>
+		
+	<section class="static">
+	<div class="static__header">
+		<div class="content-wrapper">
+			<a href="/" class="static__header__logo">
+				<img src="/assets/svg/logotype-color.svg" alt="tskb-logo">
+			</a>
+		</div>
+	</div>
+
+	<div class="content-wrapper">
+		<div class="static__content">
+			<h2 class="static__error">404</h2>
+			<p class="static__error-text">Aradığınız sayfa bulunamadı!</p>
+			<p class="static__small-text">Lütfen sayfa adresini doğru girdiğinizden emin olun.</p>
+			<a href="/" class="static__button -error">Ana Sayfa</a>
+		</div>
+	</div>
+</section>
+
+
+	</main>
+
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-1999914-2', { 'cookieExpires': 31536000 });
+		ga('send', 'pageview');
+	</script>
+
+</body>
+
+</html>
