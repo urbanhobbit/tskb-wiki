@@ -17,24 +17,25 @@ tags: [tskb, haftalik-gorunum, ekonomi, turkiye-ekonomisi, kuresel-ekonomi]
 📊 **TSKB Haftalık Görünüm — 20 Temmuz 2026**
 
 **🔹 Öne Çıkan Başlıklar:**
-  • Enflasyonda yumuşama ile teknoloji | ABD 1 YILLIK ENFLASYON BEKLENTİSİNE İLİŞKİN PİYASA FİYATLAMASI
-  • 4,0 | • | Haziran ayındaki zayıf enflasyon verileri ABD’de kısa vadeli fiyat
-  • baskılarının belirgin biçimde hafiflediğini gösterdi. Bir yıllık enflasyon
+  • FED FAİZ BEKLENTİLERİ (Piyasanın
+  • 2,0 Temmuz Aralık 1,0
+  • 1 OCAK 2027 İTİBARIYLA HÜRMÜZ’DEN
+  • GÜNLÜK 60 GEMİ GEÇİŞİ OLASILIĞI (%)
+  • Hürmüz’de risk algısı bozulurken bu yıl
+  • - Hürmüz’den günlük geçişlerin savaş öncesindeki günlük 130 gemilik ortalamanın oldukça altında kalması petrol fiyatlarındaki geri çekilmenin kalıcılığına iklişkin soru işaretlerine neden olmuştu. Haziran sonundaki geçici ateşkesle haftalık geçişler yaklaşık 240 gemiye kadar yükselse de bu sayı savaş öncesindeki 700’ün üzerindeki düzeyin hayli altında kaldı.
 
-**🌍 Küresel Görünüm:**
-  • Geçen hafta ABD’de haziran TÜFE’si aylık %0,4 gerilerken yıllık
-  • Buna karşın tahvil faizlerinin yüksek kalması önemli bir ayrışma
-  • ABD enflasyon verileri ve ikinci çeyrek bilanço sezonunun
-  • Çin ekonomisi ikinci çeyrekte yıllık %4,3 büyüdü. Haziran
-  • ABD-İran gerilimi ve Hürmüz geçişlerindeki aksamalar Brent
+**🇹🇷 Türkiye Görünümü:**
+  • Hürmüz’den günlük geçişlerin savaş öncesindeki günlük 130 gemilik ortalamanın oldukça altında kalması petrol fiyatlarındaki geri çekilmenin kalıcılığına iklişkin soru işaretlerine neden olmuştu. Haziran sonundaki geçici ateşkesle haftalık geçişler yaklaşık 240 gemiye kadar yükselse de bu sayı savaş öncesindeki 700’ün üzerindeki düzeyin hayli altında kaldı.
+  • Son dönemde tırmanan jeopolitik gerilimlerle Brent petrol yeniden 88 dolar seviyesine çıktı. Yenilenen saldırılar yalnızca enerji fiyatlarını değil küresel enflasyon görünümünü, merkez bankalarının faiz patikasını ve Türkiye gibi net enerji ithalatçısı ülkeleri de olumsuz etkileyebilir.
+  • Yıllık TÜFE artışı mayıs ayındaki %4,2’den %3,5’e gerilerken çekirdek enflasyon %2,6’ya düştü. Üretici fiyatları aylık bazda %0,3 azalırken yıllık ÜFE de %6,0’dan %5,5’e indi. Böylece enflasyondaki düşüş yalnızca nihai tüketici fiyatlarıyla sınırlı kalmadı. Şirketlerin girdi ve satış fiyatlarında da ivme kaybı görüldü.
+  • ÜFE’deki gerileme maliyet baskılarının ilerleyen aylarda tüketici fiyatlarına daha sınırlı yansıyabileceğine işaret ediyor. Bu görünüm Fed’in faiz artışlarından kaçınabileceği yönündeki beklentileri güçlendirirken kısa vadeli tahvil faizleri üzerinde aşağı yönlü baskı yaratabilir.
+  • ABD’de haziran enflasyon verilerinin beklentilerin altında kalması temmuz toplantısında faiz artırımı ihtimalini belirgin biçimde azalttı. Piyasa enerji kaynaklı fiyat baskılarının çekirdek enflasyona sınırlı yansımasını da olumlu buldu. Böylelikle yıl sonuna kadar beklenen toplam sıkılaşma da aşağı çekildi.
 
-**📅 Haftanın Önemli Verileri:**
-  • 30 → • Temmuz ayı piyasa
-  • 20 Temmuz - Pazartesi → Türkiye TCMB Piyasa Katılımcıları
-  • 21 Temmuz - Salı → Birleşik Krallık İşsizlik Oranı
-  • 22 Temmuz - Çarşamba → Japonya Dış Ticaret Dengesi
-  • 23 Temmuz - Perşembe → Türkiye Tüketici Güven Endeksi
-  • 24 Temmuz - Cuma → Japonya TÜFE (Haziran, yıllık
+**📈 Piyasa Verileri:**
+  • ## GÜNLÜK 60 GEMİ GEÇİŞİ OLASILIĞI (%)
+  • - Yıllık TÜFE artışı mayıs ayındaki %4,2’den %3,5’e gerilerken çekirdek enflasyon %2,6’ya düştü. Üretici fiyatları aylık bazda %0,3 azalırken yıllık ÜFE de %6,0’dan %5,5’e indi. Böylece enflasyondaki düşüş yalnızca nihai tüketici fiyatlarıyla sınırlı kalmadı. Şirketlerin girdi ve satış fiyatlarında da ivme kaybı görüldü.
+  • ||12 AYLIK İLERİYE DÖNÜK F/K ORANLARI (x, 2008’den bu yana)|||HİSSE SENEDİ ENDEKSLERİ (ABD doları, Borsa İstanbul endeksleri: TL, kısaltmalar ve açıklamalar ektedir)|||||
+  • |(%)|ABD GETİRİ EĞRİSİ|(%)|ALMANYA GETİRİ EĞRİSİ|(%)||JAPONYA GETİRİ EĞRİSİ|
 
 ---
 
@@ -42,78 +43,44 @@ tags: [tskb, haftalik-gorunum, ekonomi, turkiye-ekonomisi, kuresel-ekonomi]
 
 ## Küresel Görünüm
 
-- Geçen hafta ABD’de haziran TÜFE’si aylık %0,4 gerilerken yıllık
-- Buna karşın tahvil faizlerinin yüksek kalması önemli bir ayrışma
-- ABD enflasyon verileri ve ikinci çeyrek bilanço sezonunun
-- Çin ekonomisi ikinci çeyrekte yıllık %4,3 büyüdü. Haziran
-- ABD-İran gerilimi ve Hürmüz geçişlerindeki aksamalar Brent
-- 22 Temmuz’da ABD’de Google, IBM ve Tesla bilançoları -1,7 -2,3 0,0
-- Avrupa Merkez Bankası 23 Temmuz’da toplanacak. Haziran
-- Haziran ayı merkezi yönetim bütçesi 114,2 milyar TL fazla 29,21
-- Son günlerde artan jeopolitik gerilimler ile petrol ve doğal gaz
-- Geçen hafta açıklanan mayıs ödemeler dengesi 1,5 milyar dolar
-- Fitch Ratings 17 Temmuz’da Türkiye’nin kredi notunu “BB-”, (Toplam getiri, ABD doları, %) – Haftalık veriler: 13 - 17 Temmuz 2026
-- TCMB 23 Temmuz’da politika faizi kararını açıklayacak. -1,1 -1,1 0,0
-- Hürmüz’den günlük geçişlerin savaş öncesindeki günlük 130 •         Yıllık TÜFE artışı mayıs ayındaki %4,2’den %3,5’e gerilerken • ABD’de haziran enflasyon verilerinin beklentilerin altında
-- Son dönemde tırmanan jeopolitik gerilimlerle Brent petrol •         ÜFE’deki gerileme maliyet baskılarının ilerleyen aylarda çıkmış değil. Petrol fiyatlarının yeniden yükselmesi, tarifelerin
-
-## Veri Takvimi
-
-- 30                                                                                                                                                                                                  •      Temmuz ayı piyasa katılımcıları anketinin sonuçları enflasyon
-- 90                                                                                                                                                                                                       Temmuz             Aralık
-- 20 Temmuz Pazartesi Türkiye         TCMB Piyasa Katılımcıları Anketi (Temmuz)                  -          -   2.07.2026      Altın Tahvili - 6 ayda bir kupon ödemeli                         2 Yıl    Doğrudan Satış
-- 21 Temmuz Salı      Birleşik Krallık İşsizlik Oranı (Mayıs, %)                               4,9       4,9    7.07.2026      Sabit Kuponlu Devlet Tahvili - 6 ayda bir kupon ödemeli          5 Yıl    İhale / Yeniden İhraç
-- 22 Temmuz Çarşamba Japonya          Dış Ticaret Dengesi (Haziran, milyar yen)              -379       -120    21.07.2026     ABD Doları Cinsi Devlet Tahvili - 6 ayda bir kupon ödemeli       2 Yıl    Doğrudan Satış
-- 23 Temmuz Perşembe Türkiye          Tüketici Güven Endeksi (Temmuz)                          88         88
-- 24 Temmuz Cuma      Japonya         TÜFE (Haziran, yıllık % değişim)                          2          2         3.07.2026                      73.027                      0             73.027
+- Hürmüz’den günlük geçişlerin savaş öncesindeki günlük 130 gemilik ortalamanın oldukça altında kalması petrol fiyatlarındaki geri çekilmenin kalıcılığına iklişkin soru işaretlerine neden olmuştu. Haziran sonundaki geçici ateşkesle haftalık geçişler yaklaşık 240 gemiye kadar yükselse de bu sayı savaş öncesindeki 700’ün üzerindeki düzeyin hayli altında kaldı.
+- Son dönemde tırmanan jeopolitik gerilimlerle Brent petrol yeniden 88 dolar seviyesine çıktı. Yenilenen saldırılar yalnızca enerji fiyatlarını değil küresel enflasyon görünümünü, merkez bankalarının faiz patikasını ve Türkiye gibi net enerji ithalatçısı ülkeleri de olumsuz etkileyebilir.
+- Yıllık TÜFE artışı mayıs ayındaki %4,2’den %3,5’e gerilerken çekirdek enflasyon %2,6’ya düştü. Üretici fiyatları aylık bazda %0,3 azalırken yıllık ÜFE de %6,0’dan %5,5’e indi. Böylece enflasyondaki düşüş yalnızca nihai tüketici fiyatlarıyla sınırlı kalmadı. Şirketlerin girdi ve satış fiyatlarında da ivme kaybı görüldü.
+- ÜFE’deki gerileme maliyet baskılarının ilerleyen aylarda tüketici fiyatlarına daha sınırlı yansıyabileceğine işaret ediyor. Bu görünüm Fed’in faiz artışlarından kaçınabileceği yönündeki beklentileri güçlendirirken kısa vadeli tahvil faizleri üzerinde aşağı yönlü baskı yaratabilir.
+- ABD’de haziran enflasyon verilerinin beklentilerin altında kalması temmuz toplantısında faiz artırımı ihtimalini belirgin biçimde azalttı. Piyasa enerji kaynaklı fiyat baskılarının çekirdek enflasyona sınırlı yansımasını da olumlu buldu. Böylelikle yıl sonuna kadar beklenen toplam sıkılaşma da aşağı çekildi.
+- Bununla birlikte faiz artışı senaryosu tamamen fiyatlamadan çıkmış değil. Petrol fiyatlarının yeniden yükselmesi, tarifelerin maliyetlere yansıması ve güçlü yapay zeka yatırımlarının etkisi enflasyon riskini canlı tutuyor. Bu nedenle tahvil piyasası yakın vadede daha temkinli bir Fed beklerken yılın ilerleyen bölümünde veriye bağlı yeniden sıkılaşma ihtimalini koruyor.
 
 ## Hazine İç Borç Ödeme Takvimi
 
 ```
-Türkiye         TCMB Politika Faizi Kararı (Temmuz, %)                   37         37
-Euro Bölgesi    Avrupa Merkez Bankası Faiz Kararı (Temmuz, %)             2          2
-ABD             İlk İşsizlik Maaşı Başvuruları (haftalık, bin kişi)     208        212         (milyon TL)        Piyasa (miyon TL)     Kamu (milyon TL) Toplam (milyon TL)
-Euro Bölgesi    Tüketici Güven Endeksi (Temmuz, öncü)                    -18       -17         1.07.2026                       4.219                    200              4.419
-24 Temmuz Cuma      Japonya         TÜFE (Haziran, yıllık % değişim)                          2          2         3.07.2026                      73.027                      0             73.027
-Japonya         Çekirdek TÜFE (Haziran, yıllık % değişim)                1,4         2         8.07.2026                      51.975                   5.030            57.004
-Japonya         İmalat PMI (Temmuz, öncü)                               54,8        55         15.07.2026                   160.102                   16.254           176.355
-Euro Bölgesi    İmalat PMI (Temmuz, öncü)                               51,4      51,3         22.07.2026                   326.019                    1.403           327.422
-Euro Bölgesi    Hizmet PMI (Temmuz, öncü)                                49         50         29.07.2026                        517                      0               517
-ABD             İmalat PMI (Temmuz, öncü)                               53,9      54,5         TOPLAM                       615.858                   22.886           638.744
-ABD             Hizmet PMI (Temmuz, öncü)                                51         51
-Türkiye         Moody’s Kredi Notu Değerlendirmesi                      Ba3           -        Kaynak: HMB, TSKB Ekonomik Araştırmalar
+**(milyon TL) Piyasa (miyon TL) Kamu (milyon TL) Toplam (milyon TL)**
+1.07.2026 4.219 200 4.419
+|1.07.2026|4.219|200||4.419|
+|---|---|---|---|---|
+|3.07.2026|73.027||0|73.027|
+|8.07.2026|51.975|5.030||57.004|
+|15.07.2026|160.102|16.254||176.355|
+|22.07.2026|326.019|1.403||327.422|
+|29.07.2026|517||0|517|
+|TOPLAM Kaynak: HMB, TSKB Ekonomik Araştırmalar|615.858|22.886||638.744|
 Kaynak: Bloomberg, TSKB Ekonomik Araştırmalar
 ```
 
 ## Kısaltmalar
 
-- CDS (Credit Default Swap - Kredi Temerrüt Takası)                                         OAS (Option Adjusted Spread – Opsiyon Düzeltilmiş Getiri Farkı)
-- Bir ülke veya şirketin borcunu ödeyememe riskine karşı alınan sigorta maliyetini          Tahvil getirisi ile risksiz faiz oranı arasındaki farkı tahvilde yer alan opsiyon
-- gösterir. CDS priminin yükselmesi piyasanın kredi riskini daha yüksek algıladığına        özelliklerini dikkate alarak ölçer. Sabit getirili menkul kıymetlerin göreli risk priminin
-- işaret eder.                                                                              değerlendirilmesinde kullanılır.
-- F/K (Fiyat / Kazanç Oranı)                                                                OAD (Option Adjusted Duration – Opsiyon Düzeltilmiş Durasyon)
-- Bir şirketin veya endeksin piyasa değerinin elde ettiği kara oranını ifade eder.          Faiz oranlarındaki değişimlere karşı tahvil fiyatının duyarlılığını gösterir. OAD değeri
-- Yatırımcıların bir birim kar için kaç birim fiyat ödemeye razı olduğunu gösteren temel    yükseldikçe tahvilin faiz riski de artar.
-- değerleme göstergelerinden biridir.
-- Vade (Maturity)
-- F/DD (Fiyat / Defter Değeri Oranı)                                                        Borçlanma aracının anapara geri ödeme tarihine kalan süreyi ifade eder. Daha uzun
-- Piyasa değerinin şirketin özkaynaklarına oranını gösterir. Özellikle banka ve finansal    vadeli enstrümanlar genellikle faiz değişimlerine karşı daha hassastır.
-- kurumların değerlemesinde yaygın olarak kullanılır.
-- GOÜ (Gelişmekte Olan Ülkeler)
-- TV (Temettü Verimi)                                                                       Benzer ekonomik ve finansal özelliklere sahip, gelişmiş ülkelere kıyasla daha yüksek
-- Dağıtılan temettünün hisse fiyatına oranını ifade eder. Yatırımcının temettü gelirinden   büyüme potansiyeli sunan ekonomileri ifade eder. Piyasa analizlerinde Türkiye’nin
-- elde ettiği yıllık getiriyi ölçmek için kullanılır.                                       performansını emsal ülkelerle karşılaştırmak amacıyla referans olarak kullanılır.
-- PD (Piyasa Değeri)                                                                        GÜ (Gelişmiş Ülkeler)
-- Bir şirketin borsadaki toplam değerini ifade eder ve hisse fiyatı ile dolaşımdaki pay     Yüksek gelir düzeyi, derin finansal piyasalar ve oturmuş kurumsal yapıya sahip
-- sayısının çarpılmasıyla hesaplanır.                                                       ekonomileri ifade eder. Küresel piyasalarda güvenli liman niteliği taşıyan varlıkların
-- ve temel finansal göstergelerin karşılaştırılmasında referans grubu olarak kullanılır.
-- Onur Salttürk, CFA (saltturko@tskb.com.tr)
-- Yayınlarımıza üye olmak için
-- TSKB Ekonomik Araştırmalar
-- ekonomikarastirmalar@tskb.com.tr
-- Meclisi Mebusan Cad. No 81 Fındıklı İstanbul 34427, Türkiye
-- adresinden bize ulaşabilirsiniz
-- Tel: (90) 212 334 50 50 Faks: (90) 212 334 52 34
+- **CDS (Credit Default Swap-Kredi Temerrüt Takası)** Bir ülke veya şirketin borcunu ödeyememe riskine karşı alınan sigorta maliyetini gösterir. CDS priminin yükselmesi piyasanın kredi riskini daha yüksek algıladığına işaret eder.
+- **F/K (Fiyat / Kazanç Oranı)** Bir şirketin veya endeksin piyasa değerinin elde ettiği kara oranını ifade eder. Yatırımcıların bir birim kar için kaç birim fiyat ödemeye razı olduğunu gösteren temel değerleme göstergelerinden biridir.
+- **F/DD (Fiyat / Defter Değeri Oranı)** Piyasa değerinin şirketin özkaynaklarına oranını gösterir. Özellikle banka ve finansal kurumların değerlemesinde yaygın olarak kullanılır.
+- **TV (Temettü Verimi)** Dağıtılan temettünün hisse fiyatına oranını ifade eder. Yatırımcının temettü gelirinden elde ettiği yıllık getiriyi ölçmek için kullanılır.
+- **PD (Piyasa Değeri)** Bir şirketin borsadaki toplam değerini ifade eder ve hisse fiyatı ile dolaşımdaki pay sayısının çarpılmasıyla hesaplanır.
+- **OAS (Option Adjusted Spread – Opsiyon Düzeltilmiş Getiri Farkı)** Tahvil getirisi ile risksiz faiz oranı arasındaki farkı tahvilde yer alan opsiyon özelliklerini dikkate alarak ölçer. Sabit getirili menkul kıymetlerin göreli risk priminin değerlendirilmesinde kullanılır.
+- **OAD (Option Adjusted Duration – Opsiyon Düzeltilmiş Durasyon)** Faiz oranlarındaki değişimlere karşı tahvil fiyatının duyarlılığını gösterir. OAD değeri yükseldikçe tahvilin faiz riski de artar.
+- **Vade (Maturity)** Borçlanma aracının anapara geri ödeme tarihine kalan süreyi ifade eder. Daha uzun vadeli enstrümanlar genellikle faiz değişimlerine karşı daha hassastır.
+- **GOÜ (Gelişmekte Olan Ülkeler)** Benzer ekonomik ve finansal özelliklere sahip, gelişmiş ülkelere kıyasla daha yüksek büyüme potansiyeli sunan ekonomileri ifade eder. Piyasa analizlerinde Türkiye’nin performansını emsal ülkelerle karşılaştırmak amacıyla referans olarak kullanılır.
+- **GÜ (Gelişmiş Ülkeler)** Yüksek gelir düzeyi, derin finansal piyasalar ve oturmuş kurumsal yapıya sahip ekonomileri ifade eder. Küresel piyasalarda güvenli liman niteliği taşıyan varlıkların ve temel finansal göstergelerin karşılaştırılmasında referans grubu olarak kullanılır.
+- **Onur Salttürk, CFA (saltturko@tskb.com.tr)**
+- **TSKB Ekonomik Araştırmalar** **Yayınlarımıza üye olmak için** **ekonomikarastirmalar@tskb.com.tr** **Meclisi Mebusan Cad. No 81 Fındıklı İstanbul 34427, Türkiye adresinden bize ulaşabilirsiniz**
+- **Tel: (90) 212 334 50 50 Faks: (90) 212 334 52 34**
 
 
 ---

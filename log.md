@@ -18,3 +18,5 @@
 | 2026-07-27 09:02 | 27.07.2026 | İndirme + Wiki Makalesi | 1374 KB |
 
 | 2026-08-03 09:03 | 03.08.2026 | İndirme + Wiki Makalesi | 1436 KB |
+
+| 2026-08-06 04:16 | 20.07.2026 | İndirme + Wiki Makalesi | 1392 KB |

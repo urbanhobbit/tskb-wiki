@@ -35,6 +35,7 @@ def parse_args():
     parser.add_argument("--date", help="Tarih YYYYMMDD formatında (varsayılan: bugün)")
     parser.add_argument("--pdf", help="Doğrudan PDF dosya yolu")
     parser.add_argument("--force", action="store_true", help="Var olanı tekrar indir")
+    parser.add_argument("--verbose", action="store_true", help="Rapor zaten varsa bile çıktı üret (manuel kullanım)")
     return parser.parse_args()
 
 
@@ -86,7 +87,16 @@ def download_pdf(pdf_path, url, force=False):
 
 
 def extract_text_from_pdf(pdf_path):
-    """PDF'ten temiz metin çıkar (pdftotext ile)"""
+    """PDF'ten temiz Markdown çıkar — öncelik anydoc (Firecrawl, tablolar korunur),
+    anydoc yoksa pdftotext yedeğine düş."""
+    try:
+        import anydoc
+        md = anydoc.to_markdown(str(pdf_path))
+        if md and len(md.strip()) > 50:
+            return md
+    except Exception:
+        pass
+    # Yedek: pdftotext
     result = subprocess.run(
         ["pdftotext", "-layout", str(pdf_path), "-"],
         capture_output=True, text=True, timeout=30
@@ -111,6 +121,19 @@ def extract_text_from_pdf(pdf_path):
         cleaned.append(stripped)
     
     return '\n'.join(cleaned)
+
+
+def split_pages(raw_text):
+    """anydoc Markdown'ında \f (sayfa sonu) yoktur — bölümleri başlıklardan böl.
+    Her Markdown başlığı (#/##/###) bir 'sayfa'/bölüm gibi ele alınır."""
+    parts = re.split(r'\n(?=#{1,3}\s)', raw_text)
+    return [p for p in parts if p.strip()]
+
+
+def is_bullet(s):
+    """Markdown ('- ') ve geleneksel (•) madde işaretlerini tanı."""
+    s2 = s.strip()
+    return s2.startswith('•') or s2.startswith('- ') or s2.startswith('* ')
 
 
 def parse_sections(raw_text):
@@ -224,7 +247,7 @@ def create_wiki_article(date_str, pdf_path):
     # Sayfa 4: Kısaltmalar
     
     # Bölümleri elle ayır (sayfa sonu karakterleriyle)
-    pages = raw_text.split('\f')
+    pages = split_pages(raw_text)
     
     body_parts = []
     section_bullets = {"Küresel Görünüm": [], "Türkiye Görünümü": [], "Veri Takvimi": [], "Diğer": []}
@@ -254,7 +277,7 @@ def create_wiki_article(date_str, pdf_path):
         # Madde işaretlerini topla
         for line in lines:
             s = line.strip()
-            if s.startswith('•'):
+            if is_bullet(s):
                 # Grafik gürültüsünü temizle
                 clean = re.sub(r'\s{10,}', ' ', s)  # Çoklu boşlukları tek boşluğa indir
                 clean = clean.strip()
@@ -476,7 +499,7 @@ def generate_summary(raw_text, date_str):
     dt = datetime.strptime(date_str, "%Y%m%d")
     formatted_date = tr_date(dt)
     
-    pages = raw_text.split('\f')
+    pages = split_pages(raw_text)
     
     # Sayfa başlıklarını topla (öne çıkan başlıklar)
     page_headers = []
@@ -488,6 +511,12 @@ def generate_summary(raw_text, date_str):
         for line in lines[:6]:
             s = line.strip()
             if not s or len(s) < 15 or '•' in s[:5]:
+                continue
+            # Markdown tablo satırlarını atla (| ile başlayan) ve başlık işaretlerini temizle
+            if s.startswith('|'):
+                continue
+            s = re.sub(r'^#{1,3}\s*', '', s).strip()
+            if not s:
                 continue
             # Grafik/formül satırlarını filtrele
             if re.match(r'^[\d,.\s%()x]{10,}$', s):
@@ -507,7 +536,12 @@ def generate_summary(raw_text, date_str):
         if not page_text.strip():
             continue
         lines = page_text.strip().split('\n')
-        first_lines = [l.strip() for l in lines[:6] if l.strip()]
+        first_lines = []
+        for l in lines[:6]:
+            ls = l.strip()
+            if ls.startswith('|') or not ls:
+                continue
+            first_lines.append(re.sub(r'^#{1,3}\s*', '', ls).strip())
         full_title = ' '.join(first_lines[:4])
         
         # Bölüm sınıflandırması
@@ -519,9 +553,9 @@ def generate_summary(raw_text, date_str):
         # Madde işaretlerini temizle ve birleştir
         for line in lines:
             s = line.strip()
-            if s.startswith('•'):
+            if is_bullet(s):
                 clean = re.sub(r'\s{10,}', ' ', s)
-                clean = clean.strip().lstrip('•').strip()
+                clean = clean.strip().lstrip('•-* ').strip()
                 if len(clean) > 20 and current_theme in themes:
                     themes[current_theme].append(clean)
     
@@ -664,12 +698,21 @@ def create_concept_entities(raw_text, date_str):
     return concepts_found, entities_found
 
 
+def git_push(date_str):
+    """tskb-wiki repo'sunu GitHub'a push et."""
+    try:
+        subprocess.run(["git", "-C", str(WIKI_DIR), "add", "-A"], capture_output=True, timeout=30)
+        subprocess.run(["git", "-C", str(WIKI_DIR), "commit", "-m", f"feat: haftalik-gorunum {date_str}"],
+                       capture_output=True, timeout=30)
+        r = subprocess.run(["git", "-C", str(WIKI_DIR), "push"], capture_output=True, timeout=60)
+        return r.returncode == 0
+    except Exception:
+        return False
+
+
 def main():
     args = parse_args()
     date_str, pdf_path, url = get_date_and_url(args)
-    
-    print(f"\n=== TSKB Haftalık Görünüm Wiki Alımı ===\n")
-    print(f"Tarih: {date_str}")
     
     # 1. PDF'yi indir
     if url:
@@ -677,7 +720,6 @@ def main():
         if not ok:
             # Bugünün raporu henüz yayımlanmamış olabilir — dünü dene
             yesterday = (datetime.strptime(date_str, "%Y%m%d") - timedelta(days=1)).strftime("%Y%m%d")
-            print(f"  → {date_str} bulunamadı, {yesterday} deneniyor...")
             date_str = yesterday
             pdf_path = PDFS_DIR / f"haftalik-gorunum-{date_str}.pdf"
             url = BASE_URL.format(date=date_str)
@@ -686,28 +728,29 @@ def main():
                 print("✗ Rapor bulunamadı.")
                 sys.exit(1)
     
-    # 2. Makale zaten var mı?
+    # 2. Makale zaten var mı? (no_agent cron: yeni rapor yoksa SESSİZ kal — stdout boş = teslim yok)
     article_path = ARTICLES_DIR / f"haftalik-gorunum-{date_str}.md"
     summary_path = ARTICLES_DIR / f"haftalik-gorunum-{date_str}-ozet.txt"
     is_new = not article_path.exists() or args.force
     
     if article_path.exists() and not args.force:
+        if not args.verbose:
+            return  # cron: yeni içerik yok → çıktı üretme (sessiz)
         print(f"✓ Makale zaten var: {article_path.name}")
-        # Var olan makalenin özetini oku
         if summary_path.exists():
             summary_text = summary_path.read_text(encoding='utf-8')
         else:
             raw_text = extract_text_from_pdf(pdf_path)
             summary_text = generate_summary(raw_text, date_str)
     else:
-        # 3. Wiki makalesi oluştur
+        # 3. Wiki makalesi oluştur (anydoc tabanlı)
         raw_text = extract_text_from_pdf(pdf_path)
         article_text = create_wiki_article(date_str, pdf_path)
         ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
         article_path.write_text(article_text, encoding='utf-8')
         print(f"✓ Makale oluşturuldu: {article_path.name}")
         
-        # Özeti ayrı dosyaya kaydet (cron'un kolayca okuması için)
+        # Özeti ayrı dosyaya kaydet
         summary_text = generate_summary(raw_text, date_str)
         summary_path.write_text(summary_text, encoding='utf-8')
         print(f"✓ Özet kaydedildi: {summary_path.name}")
@@ -719,19 +762,26 @@ def main():
     update_log(date_str, pdf_path)
     
     # 5. Kavram/entity tespiti
-    concepts, entities = create_concept_entities(raw_text, date_str)
+    if is_new:
+        concepts, entities = create_concept_entities(raw_text, date_str)
+        if concepts:
+            print(f"  → Tespit edilen kavramlar: {', '.join(concepts)}")
+        if entities:
+            print(f"  → Tespit edilen entity'ler: {', '.join(entities)}")
     
-    if concepts:
-        print(f"  → Tespit edilen kavramlar: {', '.join(concepts)}")
-    if entities:
-        print(f"  → Tespit edilen entity'ler: {', '.join(entities)}")
+    # 6. GitHub push (artık script içinde — no_agent cron bunu da halleder)
+    if is_new:
+        if git_push(date_str):
+            print(f"✓ GitHub'a push edildi")
+        else:
+            print("⚠ Push başarısız (git durumunu kontrol et)")
     
-    print(f"\n✓ İşlem tamam. PDF: {pdf_path.name}, Makale: {article_path.name}\n")
-    
-    # Cron için özet çıktısı (makine tarafından okunabilir)
-    print("=== SUMMARY START ===")
+    # 7. Teslim edilecek özet çıktısı (no_agent cron stdout'u doğrudan gönderir)
+    print(f"\n✅ **TSKB Haftalık Görünüm — {tr_date(dt)}** hazır (anydoc dönüşümü)\n")
     print(summary_text)
-    print("=== SUMMARY END ===")
+    print(f"\n📄 **PDF:** https://github.com/urbanhobbit/tskb-wiki/blob/main/raw/pdfs/haftalik-gorunum-{date_str}.pdf")
+    print(f"📝 **Wiki makalesi:** https://github.com/urbanhobbit/tskb-wiki/blob/main/raw/articles/haftalik-gorunum-{date_str}.md")
+    print(f"🔗 **Repo:** https://github.com/urbanhobbit/tskb-wiki")
 
 
 if __name__ == "__main__":
