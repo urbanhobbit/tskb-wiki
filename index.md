@@ -4,7 +4,6 @@
 
 | Tarih | Başlık | PDF |
 |-------|--------|-----|
-| 06.08.2026 | TSKB Haftalık Görünüm — 6 Ağustos 2026 | [PDF](raw/pdfs/haftalik-gorunum-20260806.pdf) |
 
 ## Kavramlar
 

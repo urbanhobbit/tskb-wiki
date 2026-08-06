@@ -82,6 +82,16 @@ def download_pdf(pdf_path, url, force=False):
         return False
     
     size = pdf_path.stat().st_size
+    # PDF doğrulaması: gerçek rapor ~1MB olur; HTML hata sayfası/çöp dosyayı reddet
+    try:
+        head = pdf_path.open('rb').read(5)
+    except Exception:
+        head = b''
+    if not head.startswith(b'%PDF') or size < 10240:
+        print(f"✗ Geçersiz içerik (PDF değil veya çok küçük): {pdf_path.name} ({size} bytes, {head[:5]!r})")
+        pdf_path.unlink()
+        return False
+    
     print(f"✓ İndirildi: {pdf_path.name} ({size} bytes)")
     return True
 
