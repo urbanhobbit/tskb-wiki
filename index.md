@@ -4,7 +4,7 @@
 
 | Tarih | Başlık | PDF |
 |-------|--------|-----|
-| 24.08.2026 | TSKB Haftalık Görünüm — 24 Ağustos 2026 | [PDF](raw/pdfs/haftalik-gorunum-20260824.pdf) |
+| 31.08.2026 | TSKB Haftalık Görünüm — 31 Ağustos 2026 | [PDF](raw/pdfs/haftalik-gorunum-20260831.pdf) |
 
 ## Kavramlar
 
