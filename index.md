@@ -4,7 +4,7 @@
 
 | Tarih | Başlık | PDF |
 |-------|--------|-----|
-| 21.09.2026 | TSKB Haftalık Görünüm — 21 Eylül 2026 | [PDF](raw/pdfs/haftalik-gorunum-20260921.pdf) |
+| 28.09.2026 | TSKB Haftalık Görünüm — 28 Eylül 2026 | [PDF](raw/pdfs/haftalik-gorunum-20260928.pdf) |
 
 ## Kavramlar
 
