@@ -4,7 +4,7 @@
 
 | Tarih | Başlık | PDF |
 |-------|--------|-----|
-| 05.10.2026 | TSKB Haftalık Görünüm — 5 Ekim 2026 | [PDF](raw/pdfs/haftalik-gorunum-20261005.pdf) |
+| 12.10.2026 | TSKB Haftalık Görünüm — 12 Ekim 2026 | [PDF](raw/pdfs/haftalik-gorunum-20261012.pdf) |
 
 ## Kavramlar
 
