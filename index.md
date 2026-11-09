@@ -4,7 +4,7 @@
 
 | Tarih | Başlık | PDF |
 |-------|--------|-----|
-| 02.11.2026 | TSKB Haftalık Görünüm — 2 Kasım 2026 | [PDF](raw/pdfs/haftalik-gorunum-20261102.pdf) |
+| 09.11.2026 | TSKB Haftalık Görünüm — 9 Kasım 2026 | [PDF](raw/pdfs/haftalik-gorunum-20261109.pdf) |
 
 ## Kavramlar
 
